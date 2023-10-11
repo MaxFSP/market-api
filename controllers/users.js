@@ -28,11 +28,13 @@ exports.createUser = (req, res, next) => {
   const name = req.body.name;
   const email = req.body.email;
   const password = req.body.password;
+  const permission = req.body.permission;
 
   User.create({
     name: name,
     email: email,
     password: password,
+    permission: permission,
   })
     .then((result) => {
       console.user("Created User");
@@ -52,7 +54,7 @@ exports.updateUser = (req, res, next) => {
   const updatedName = req.params.name;
   const updatedEmail = req.params.email;
   const updatedPassword = req.params.password;
-
+  const updatedPermission = req.params.permission;
   User.findByPk(userId)
     .then((user) => {
       if (!user) {
@@ -62,6 +64,7 @@ exports.updateUser = (req, res, next) => {
       user.name = updatedName;
       user.email = updatedEmail;
       user.password = updatedPassword;
+      user.permission = updatedPermission;
       return user.save();
     })
     .then((result) => {

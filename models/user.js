@@ -20,6 +20,11 @@ const User = db.define("user", {
     type: Sequelize.STRING,
     allowNull: false,
   },
+  permission: {
+    type: Sequelize.INTEGER,
+    allowNull: true,
+    default: 0,
+  },
 });
 
 module.exports = User;
