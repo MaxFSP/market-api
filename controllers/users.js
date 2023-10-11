@@ -7,7 +7,7 @@ exports.getUsers = (req, res, next) => {
     .then((users) => {
       res.status(200).json({ users: users });
     })
-    .catch((err) => console.user(err));
+    .catch((err) => console.log(err));
 };
 
 //get user by id
@@ -20,7 +20,7 @@ exports.getUser = (req, res, next) => {
       }
       res.status(200).json({ user: user });
     })
-    .catch((err) => console.user(err));
+    .catch((err) => console.log(err));
 };
 
 //create user
@@ -37,14 +37,14 @@ exports.createUser = (req, res, next) => {
     permission: permission,
   })
     .then((result) => {
-      console.user("Created User");
+      console.log("Created User");
       res.status(201).json({
         message: "User created successfully!",
         user: result,
       });
     })
     .catch((err) => {
-      console.user(err);
+      console.log(err);
     });
 };
 
@@ -70,7 +70,7 @@ exports.updateUser = (req, res, next) => {
     .then((result) => {
       res.status(200).json({ message: "User updated!", user: result });
     })
-    .catch((err) => console.user(err));
+    .catch((err) => console.log(err));
 };
 
 //delete user
@@ -90,5 +90,5 @@ exports.deleteUser = (req, res, next) => {
     .then((result) => {
       res.status(200).json({ message: "User deleted!" });
     })
-    .catch((err) => console.user(err));
+    .catch((err) => console.log(err));
 };

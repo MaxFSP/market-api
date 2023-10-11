@@ -7,7 +7,7 @@ exports.getLists = (req, res, next) => {
     .then((lists) => {
       res.status(200).json({ lists: lists });
     })
-    .catch((err) => console.list(err));
+    .catch((err) => console.log(err));
 };
 
 //get list by id
@@ -20,7 +20,7 @@ exports.getList = (req, res, next) => {
       }
       res.status(200).json({ list: list });
     })
-    .catch((err) => console.list(err));
+    .catch((err) => console.log(err));
 };
 
 //create list
@@ -35,14 +35,14 @@ exports.createList = (req, res, next) => {
     quantity: quantity,
   })
     .then((result) => {
-      console.list("Created List");
+      console.log("Created List");
       res.status(201).json({
         message: "List created successfully!",
         list: result,
       });
     })
     .catch((err) => {
-      console.list(err);
+      console.log(err);
     });
 };
 
@@ -64,7 +64,7 @@ exports.updateList = (req, res, next) => {
     .then((result) => {
       res.status(200).json({ message: "List updated!", list: result });
     })
-    .catch((err) => console.list(err));
+    .catch((err) => console.log(err));
 };
 
 //delete list
@@ -84,5 +84,5 @@ exports.deleteList = (req, res, next) => {
     .then((result) => {
       res.status(200).json({ message: "List deleted!" });
     })
-    .catch((err) => console.list(err));
+    .catch((err) => console.log(err));
 };

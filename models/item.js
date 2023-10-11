@@ -18,11 +18,6 @@ const Item = db.define("item", {
     type: Sequelize.STRING,
     allowNull: false,
   },
-
-  userId: {
-    type: Sequelize.INTEGER,
-    allowNull: false,
-  },
 });
 
 module.exports = Item;

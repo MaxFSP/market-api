@@ -13,11 +13,6 @@ const Cart = db.define("cart", {
     type: Sequelize.STRING,
     allowNull: false,
   },
-
-  userId: {
-    type: Sequelize.INTEGER,
-    allowNull: false,
-  },
 });
 
 module.exports = Cart;

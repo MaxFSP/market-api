@@ -8,14 +8,7 @@ const List = db.define("list", {
     allowNull: false,
     primaryKey: true,
   },
-  userId: {
-    type: Sequelize.INTEGER,
-    allowNull: false,
-  },
-  itemId: {
-    type: Sequelize.INTEGER,
-    allowNull: false,
-  },
+
   quantity: {
     type: Sequelize.INTEGER,
     allowNull: false,
