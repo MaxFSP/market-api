@@ -1,0 +1,41 @@
+version: "3.9"
+
+services:
+  node_db:
+    container_name: node_db
+    image: postgres:14.1-alpine
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres1234
+      POSTGRES_DB: postgres
+    volumes:
+      - ./conf/postgres/initdb/:/docker-entrypoint-initdb.d/
+  node_app:
+    container_name: node_app
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - PG_DB=postgres
+      - PG_USER=postgres
+      - PG_PASSWORD=postgres1234
+      - PG_HOST=node_db
+    depends_on:
+      - node_db
+    restart: always
+
+  pgAdmin:
+    image: "dpage/pgadmin4:latest"
+    ports:
+      - "15432:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: cansat@emi.com
+      PGADMIN_DEFAULT_PASSWORD: cansat123
+      PGADMIN_SERVER_JSON_FILE: /pgadmin4/conf/server.json
+    volumes:
+      - ./conf/pgadmin/:/pgadmin4/conf/
+
+volumes:
+  node_db_data: {}
