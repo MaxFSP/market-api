@@ -47,16 +47,16 @@ sequelize
   })
   .catch((err) => console.log(err));
 
-const db = require("./util/database");
-db.items = require("./models/item.js");
-db.users = require("./models/user.js");
-db.cart = require("./models/cart.js");
-db.list = require("./models/list.js");
-db.users.hasMany(db.items);
-db.items.belongsTo(db.users);
-db.items.hasMany(db.list);
-db.list.belongsTo(db.items);
-db.cart.hasMany(db.list);
-db.list.belongsTo(db.cart);
-db.users.hasOne(db.cart);
-db.cart.belongsTo(db.users);
+//const db = require("./util/database");
+//db.items = require("./models/item.js");
+//db.users = require("./models/user.js");
+//db.cart = require("./models/cart.js");
+//db.list = require("./models/list.js");
+//db.users.hasMany(db.items);
+//db.items.belongsTo(db.users);
+//db.items.hasMany(db.list);
+//db.list.belongsTo(db.items);
+//db.cart.hasMany(db.list);
+//db.list.belongsTo(db.cart);
+//db.users.hasOne(db.cart);
+//db.cart.belongsTo(db.users);

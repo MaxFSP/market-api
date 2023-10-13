@@ -1,4 +1,5 @@
 const User = require("../models/user");
+
 // CRUD Controllers
 
 //get all users

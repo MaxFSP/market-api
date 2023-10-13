@@ -9,13 +9,12 @@ const Item = db.define("item", {
     primaryKey: true,
   },
 
-  name: {
+  description: {
     type: Sequelize.STRING,
     allowNull: false,
   },
-
-  description: {
-    type: Sequelize.STRING,
+  userId: {
+    type: Sequelize.INTEGER,
     allowNull: false,
   },
 });

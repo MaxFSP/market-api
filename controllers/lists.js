@@ -26,7 +26,7 @@ exports.getList = (req, res, next) => {
 //create list
 exports.createList = (req, res, next) => {
   const itemId = req.body.itemId;
-  const cartId = req.body.cartId;
+  const userId = req.body.userId;
   const quantity = req.body.quantity;
 
   List.create({

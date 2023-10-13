@@ -26,11 +26,11 @@ exports.getItem = (req, res, next) => {
 //create item
 exports.createItem = (req, res, next) => {
   const description = req.body.description;
-  const userId = req.body.userUserId;
+  const userId = req.body.userId;
 
   Item.create({
     description: description,
-    userUserId: userId,
+    userId: userId,
   })
     .then((result) => {
       console.log("Created Item");
@@ -48,7 +48,7 @@ exports.createItem = (req, res, next) => {
 exports.updateItem = (req, res, next) => {
   const itemId = req.params.itemId;
   const updatedDescription = req.params.description;
-  const updatedUserId = req.params.userUserId;
+  const updatedUserId = req.params.UserId;
   Item.findByPk(itemId)
     .then((item) => {
       if (!item) {
